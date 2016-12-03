@@ -192,6 +192,7 @@ p {
 
 .white-box {
   width: 300px;
+  height: 300px;
   padding: 15px;
   border: 1px none #dcebf7;
   border-radius: 5px;
@@ -524,7 +525,7 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
     margin-bottom: 30px;
   }
   .hero-section.centered {
-    padding-top: 119px;
+    padding-top: 120px;
     padding-bottom: 119px;
   }
   .hero-heading {
