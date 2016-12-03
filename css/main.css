@@ -25,7 +25,7 @@ body {
 	clear: both;
 	margin-top: 50px;
 	margin-bottom: 20px;
-	
+
 }
 
 h1 {
@@ -362,10 +362,8 @@ p {
 }
 
 .twitter{
-	display: block;	    
-	float:right;
-	padding-top:5px;
-	padding-right:15px;
+
+	padding-top:15px;
 	clear: both;
 		    
 }
