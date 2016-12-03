@@ -209,15 +209,15 @@ p {
 }
 
 .hero-section {
-  padding-top: 242px;
-  padding-bottom: 242px;
+  padding-top: 20px;
+  padding-bottom: 150px;
 }
 
 .hero-section.centered {
-  padding-top: 195px;
-  padding-bottom: 195px;
+  padding-top: 20px;
+  padding-bottom: 150px;
   border-bottom: 4px solid #69b9ff;
-  background-image: -webkit-linear-gradient(97deg, #2e80b6, hsla(0, 0%, 100%, .3) 54%), url("http://uploads.webflow.com/5842db574bab51ec5b18fb05/5842e1a7dd49de7e73bcc4af_gn_niunjyji-nick-karvounis.jpg");
+  background-image: -webkit-linear-gradient(97deg, #2e80b6, hsla(0, 0%, 100%, .3) 54%), url("/");
   background-image: linear-gradient(353deg, #2e80b6, hsla(0, 0%, 100%, .3) 54%), url("http://uploads.webflow.com/5842db574bab51ec5b18fb05/5842e1a7dd49de7e73bcc4af_gn_niunjyji-nick-karvounis.jpg");
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
