@@ -261,7 +261,7 @@ p {
   margin-right: 10px;
   margin-left: 10px;
   padding: 10px 30px;
-  border: 1px solid #fff;
+  border: 0px solid #fff;
   border-radius: 4px;
   -webkit-transition: background-color 300ms ease, border 300ms ease, color 300ms ease;
   transition: background-color 300ms ease, border 300ms ease, color 300ms ease;
