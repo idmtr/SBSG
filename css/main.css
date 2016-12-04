@@ -20,12 +20,23 @@ body {
   line-height: 20px;
 }
 
+.rotate1{
+
+	height: 100px;
+}
+
 .logos{
 
 	clear: both;
 	margin-top: 50px;
 	margin-bottom: 20px;
 
+}
+
+.nwbtn{
+
+	font-weight: 900;
+	cursor: pointer;
 }
 
 h1 {

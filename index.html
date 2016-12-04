@@ -5,6 +5,15 @@
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/simpletextrotator.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/jquery.simple-text-rotator.js"></script>
+  <script>
+    $(function() {
+      $('span.rotate').textrotator({animation: "flipCube"});
+    })
+  </script>
+  
 </head>
 <body>
   <!-- <div class="navigation-bar w-nav" data-animation="default" data-collapse="medium" data-duration="400">
@@ -24,7 +33,7 @@
 
         <img class="logo" sizes="(max-width: 820px) 100vw, 820px" src="img/logo.png" srcset="img/logo.png 500w, img/logo.png 800w, img/logo.png 820w">
       <div class="w-container" data-ix="new-interaction">
-      <h1 class="hero-heading title1" data-ix="fade-in-bottom-page-loads"><strong>Real-Time Voice To Chat<br/> Language Translation</strong></h1>
+      <h1 class="hero-heading title1 rotate1" data-ix="fade-in-bottom-page-loads"><strong><span class="rotate">Real-Time Voice To Chat<br/> Language Translation, Traducción de conversación por voz en tiempo real, 实时语音到聊天语言翻译</span></strong></h1>
       <div class="hero-subheading" data-ix="fade-in-bottom-page-loads"><span class="sub-title"></span>
       </div>
       <div data-ix="fade-in-bottom-page-loads"><!--<a class="button"><span>Start a Conversation Now</span></a>-->
@@ -85,7 +94,7 @@
               <h2>Real-Time In Chat Translation</h2>
               <p>Every time you need to talk to someone with different language skills just activate the real-time<br> voice-to chat translation feature of CISCO Spark.
               </p>
-               <form style="border:0px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/spokentech" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/spokentech', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail"><h3>AI Speech Newsletter</h3></label></p><p><input type="text" style="width:350px; height:60px; font-size:30px;" " name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input class="button tab w--current" type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
+               <form style="border:0px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/spokentech" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/spokentech', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail"><h3>AI Speech Newsletter</h3></label></p><p><input type="text" style="width:350px; height:60px; font-size:30px;" " name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input class="button tab w--current nwbtn" type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank"></a></p></form>
          
             </div>
           </div>
