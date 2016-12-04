@@ -110,6 +110,7 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 1px 1px 32px #000;
+  border: 0px;
 }
 
 .button:hover {
