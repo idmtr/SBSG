@@ -1,2 +1,2 @@
-# spokentech
-Speach to chat language translation / TCD 2016 Hackathon
+# Startup Berlin Slack Group
+Chat-group for people interested in the startup scene of Berlin.
