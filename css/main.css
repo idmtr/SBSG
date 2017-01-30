@@ -243,7 +243,7 @@ p {
 .hero-section.centered {
   padding-top: 50px;
   padding-bottom: 80px;
-  border-bottom: 1px solid #ff0032;
+  border-bottom: 1px solid #3e70ff;
   /*background-image: -webkit-linear-gradient(97deg, #b6932e, hsla(0, 0%, 100%, .3) 54%), url("http://i.imgur.com/A4yFD5b.png");
   background-image: linear-gradient(353deg, #b6932e, hsla(0, 0%, 100%, .3) 54%), url("http://i.imgur.com/A4yFD5b.png"); */
   background-image: url("../img/headerbg.jpg");
@@ -395,7 +395,7 @@ p {
   margin-bottom: 6px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
-  color: #fd0031;
+  color: #3e70ff;;
   font-size: 19px;
   font-weight: 300;
   text-decoration: none;
@@ -403,7 +403,7 @@ p {
 }
 
 .footer-link:hover {
-  color: rgba(0, 140, 255, .84);
+  color: #1645cc;
 }
 
 .footer-link.with-icon {
