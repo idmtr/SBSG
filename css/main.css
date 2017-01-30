@@ -11,8 +11,8 @@
    Start of custom CSS
    ========================================================================== */
 body {
-      min-height: 100%;
-    background-color: #E6E6E6;
+    min-height: 100%;
+    background-color: #ffffff;
     color: grey;
     font-family: 'Poppins', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 1.2em;
@@ -477,7 +477,7 @@ p {
     margin-bottom: -1px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #FAFAFA;
+    background-color: #ffffff;
 }
 
 .page-head__logo img {
@@ -682,6 +682,12 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
 
 .header-title {
     font-size: 14px;
+}
+
+.btn2space{
+
+	margin-bottom: 15px;
+	max-width: 250px;
 }
 
 }
