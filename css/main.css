@@ -542,6 +542,43 @@ p {
         background: #1645cc;
     }
 
+    #directory-entries{
+    	-moz-column-count: 3;
+		-webkit-column-count: 3;
+		column-count: 3;
+		margin-bottom: 30px;
+    }
+
+    .entry-img{
+		display:table-cell; 
+		vertical-align:middle; 
+		text-align:center;
+   		  			
+	}
+
+	.entry-link{
+		color: #3e70ff;
+	    position: absolute;
+    	z-index: 1;
+    	font-size: 1.3em;
+    	background-size: cover;
+	    background-color: azure;
+	    padding-right: 5px;
+    }
+
+    .entry-link:hover{
+    	background-color: #f1f1f1;
+    }
+
+    .wb2{
+    	width: 250px;
+    	height: 250px;
+    	margin: 15px;
+    	box-shadow: rgba(23, 43, 99, 0.24) 0 7px 28px;
+    	display: -webkit-inline-box;
+    }
+    
+    
 html.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {
   opacity: 0;
   -webkit-transform: translate(0px, 50px);
