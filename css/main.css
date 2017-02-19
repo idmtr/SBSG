@@ -543,11 +543,8 @@ p {
     }
 
     #directory-entries{
-    	-moz-column-count: 3;
-		-webkit-column-count: 3;
-		column-count: 3;
-		margin-bottom: 30px;
-    }
+    	
+	}
 
     .entry-img{
 		display:table-cell; 
