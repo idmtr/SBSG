@@ -50,12 +50,13 @@
 
         for (var i = 0; i < LIMIT; ++i) {
           var item = data[i];
-          var $newDiv = $('<div class="white-box wb2"><a href="#" class="entry-link"></a><img src="placeholder.gif" class="entry-img"></div>');
+          var $newDiv = $('<div class="white-box wb2"><a href="#" class="entry-link"><span class="entry-text"></span><img src="placeholder.gif" class="entry-img"></a></div>');
           
           // console.log(item);
 
           $newDiv.find('.entry-link')
-            .attr('href', item.link)
+            .attr('href', item.link);
+          $newDiv.find('.entry-text')
             .text(item.title.rendered);
 
           var featuredMedia = null;
@@ -146,7 +147,10 @@ window['_fs_namespace'] = 'FS';
       <div class="section-title-group">
         <h2 class="centered section-heading"><img height=26px; src="https://abs.twimg.com/emoji/v2/72x72/1f469-200d-1f4bb.png"><img height=26px; src="https://abs.twimg.com/emoji/v2/72x72/1f468-200d-1f4bb.png"> Whats Inside?</h2>
         <div class="center section-subheading">Chat #channels with people like you, makers, doers, coders, designers, founders, investors, journalist, marketers, PR's. <b>Join us!</b></div>
+
+
       </div>
+      <img class="fullwidth-image" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 728px, 940px" src="img/dir.png" srcset="img/dir.png 500w, img/dir.png 800w, img/dir.png 1080w, img/dir.png 1350w"><!--
       <div class="w-row">
         <div class="w-col w-col-4">
           <div class="white-box"><img class="grid-image" src="img/logo.png">
@@ -168,7 +172,7 @@ window['_fs_namespace'] = 'FS';
             <p class="sub-text2"><strong>Share & Find work opportunities.</strong>
             </p>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>  
@@ -423,14 +427,13 @@ window['_fs_namespace'] = 'FS';
   </div>
 
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-67151997-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    ga('create', 'UA-67151997-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>

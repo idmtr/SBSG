@@ -189,7 +189,10 @@ p {
 
 .section {
   position: relative;
-  padding: 80px 10px;
+  padding-left:10px
+  padding-right:10px;
+  padding-top:80px;
+  padding-bottom:30px;
   background-color: #ffffff;
   text-align: center;
 }
@@ -549,18 +552,23 @@ p {
     .entry-img{
 		display:table-cell; 
 		vertical-align:middle; 
-		text-align:center;
-   		  			
+		text-align:center;   		  			
 	}
 
+	.entry-text {
+    	background: white;
+    	position: absolute;
+    	padding-right: 5px;
+    }
+
 	.entry-link{
-		color: #3e70ff;
-	    position: absolute;
-    	z-index: 1;
-    	font-size: 1.3em;
+		width: 250px;
+    	height: 250px;
     	background-size: cover;
-	    background-color: azure;
-	    padding-right: 5px;
+	    background-color: white;
+		color: #3e70ff;
+	    z-index: 1;
+    	font-size: 1.3em;   
     }
 
     .entry-link:hover{
@@ -575,6 +583,8 @@ p {
     	display: -webkit-inline-box;
     }
     
+    
+
     
 html.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {
   opacity: 0;
