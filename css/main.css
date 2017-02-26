@@ -109,7 +109,7 @@ p {
   margin-left: 10px;
   padding: 12px 30px;
   border-radius: 44px;
-  background-color: #ff0032;
+  background-color: #e85128;
   -webkit-transition: background-color 300ms ease;
   transition: background-color 300ms ease;
   color: #fff;
@@ -125,7 +125,7 @@ p {
 }
 
 .button:hover {
-  background-color: #c30b2f;
+  background-color: #ea3706;
 }
 
 .button.w--current {
