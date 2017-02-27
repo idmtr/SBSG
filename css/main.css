@@ -153,6 +153,127 @@ p {
   background-color: #ff0032;
 }
 
+#header-main {
+  width: 100%;
+  margin: 0 0 9px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  max-width: 100%;
+  background: #fff;
+  position: relative;
+  margin-bottom: 25px;
+  margin-top: 13px;
+}
+
+.fa-facebook{
+	margin-right: 5px;
+	color: #3b5998;
+		
+}
+
+.fa-twitter{
+	margin-right: 5px;
+	color: #00aced;
+	
+}
+
+.fa-linkedin{
+	color: #0077b5;
+	
+}
+.social-text{
+	font-family: 'Poppins', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#site-header {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  margin-bottom: inherit;
+}
+
+.menu-item{
+
+	color: #000;
+}
+
+#site-logo {
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  position: relative;
+  font-weight: 900;
+  font-size: 1.2em;
+  z-index: 999;
+  display: inline-block;
+  float: left;
+}
+
+.menu-main-container {
+  display: inline-flex;
+}
+
+.social-set ul {
+  margin: 0 auto;
+  padding: 0;
+  display: inline;
+}
+
+.social-set ul li {
+  padding: 0 2px 5px 0;
+  margin: 0;
+  display: inline-block;
+  border: none !important;
+  clear: none;
+  line-height: 100%;
+}
+
+.social-set li img {
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+#nav {  
+  vertical-align: bottom;
+  line-height: 4em;
+}
+
+#nav ul {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#nav ul {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-flex;
+}
+
+#nav li {
+  padding: 0 16px;
+  font: 400 18px/13px 'Open Sans', sans-serif;
+  display: inline-block;
+}
+
+ol, ul {
+    margin-bottom: 25px;
+}
+
+.logotype{
+	float:left;
+	font-weight: 900;
+}
+
+.social-set {
+  display: inline-block;
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em; 
+}
+
 .navigation-link {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -338,7 +459,7 @@ p {
 }
 
 .section-title-group {
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .form-field {
@@ -425,6 +546,9 @@ p {
 .fullwidth-image {
   width: 100%;
   margin-bottom: 20px;
+  box-shadow: rgba(23, 43, 99, 0.24) 0 7px 28px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .white-text {
@@ -999,9 +1123,7 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
 	max-width:10em;
 	max-height:10em;*/
 	border-radius:20%;
-
 }
-
 .members a:hover{color:#544890;}
 
 ::selection{background-color:#333;color:white;}
