@@ -172,6 +172,10 @@ p {
   padding-bottom: 16px;
 }
 
+iframe {border:20px solid #000;
+    border-radius: 20px !important;
+}
+
 .section {
   position: relative;
   padding: 80px 10px;
