@@ -379,9 +379,14 @@ ol, ul {
   text-align: center;
 }
 
+.headertext{
+
+	color: #fff;
+}
+
 .hero-heading {
-  margin-bottom: 30px;
-  color: #1f1f1f;
+  margin-bottom: 10px;
+  color: #ffffff;
   font-size: 45px;
   line-height: 60px;
   font-weight: 300;
@@ -451,6 +456,10 @@ ol, ul {
   text-align: center;
   /*letter-spacing: 3px;*/
   text-transform: uppercase;
+}
+
+.section-subheading.center.white {
+	 color: #fff;
 }
 
 .section-subheading.center.off-white {
@@ -560,10 +569,10 @@ ol, ul {
   margin-top: 40px;
 }
 
-.title1{
+/*.title1{
 
 	text-shadow: 1px 1px 2px black;
-}
+} */
 
 .sub-title {
   color: #fff;
@@ -644,7 +653,7 @@ ol, ul {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #fff;
-    background-color: #3e70ff;
+    background-color: #262952;
     }
     
     .btn:hover{
@@ -666,7 +675,7 @@ ol, ul {
     
     .btn2:hover{
         
-        background: #1645cc;
+        background: #1c1f5d;
     }
 
     #directory-entries{
