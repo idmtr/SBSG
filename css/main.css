@@ -1109,6 +1109,11 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
 	margin-bottom: 0;
 }
 
+.chat-links{
+	display: inline-flex;
+	font-size: 1.4em;
+}
+
 .a-logo svg{
 	max-width: 125px;
 	max-height:125px;
