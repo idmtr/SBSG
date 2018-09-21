@@ -1,105 +1,21 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Startup Berlin - Slack chat, startup directory and a monthly bulletin.</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Talk to the 3300+ startup people from the Berlin startup scene. Join conversations on #tech, #blockchain and #musictech. Find and post startup jobs.">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="fb:admins" content="614065150" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://startupberlin.co" />
-    <meta property="og:title" content="Startup Berlin Chat" />
-    <meta property="og:description" content="Talk to the 3300+ startup people from the Berlin startup scene. Join conversations on #tech, #blockchain and #musictech. Find and post startup jobs. " />
-    <meta property="og:image" content="https://i.imgur.com/3p8b03n.png" />
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@startupslack">
-    <meta name="twitter:creator" content="@idmtr">
-    <meta name="twitter:title" content="Talk to the 3300+ startup people from the Berlin startup scene. Join conversations on #tech, #blockchain and #musictech. Find and post startup jobs. ">
-    <meta name="twitter:image" content="https://i.imgur.com/q4LHPdD.png">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script>
-    $(function() {
-        // 
-        $.get("https://directory.startupberlin.co/wp-json/wp/v2/resources", function(data) {
-            var LIMIT = 3;
-            var $directoryDiv = $('#directory-entries');
-
-            $directoryDiv.empty();
-
-            for (var i = 0; i < LIMIT; ++i) {
-                var item = data[i];
-                var $newDiv = $('<div class="white-box wb2"><a href="#" class="entry-link"><span class="entry-text"></span><img src="placeholder.gif" class="entry-img"></a></div>');
-
-                // console.log(item);
-
-                $newDiv.find('.entry-link')
-                    .attr('href', item.link);
-                $newDiv.find('.entry-text')
-                    .text(item.title.rendered);
-
-                var featuredMedia = null;
-                try {
-                    featuredMedia = item._links['wp:featuredmedia'][0].href;
-                } catch (e) {}
-
-                if (featuredMedia) {
-
-                    (function($newDiv) {
-
-                        $.get(featuredMedia, function(fmData) {
-                            //console.log(fmData);
-                            var sizes = ['medium', 'thumbnail', 'chipmunk-sm'];
-                            var medias = fmData.media_details.sizes;
-                            var thumbnailUrl;
-
-                            for (var i = 0; i < sizes.length; ++i) {
-                                var size = sizes[i];
-                                if (medias[size] && medias[size].source_url) {
-                                    thumbnailUrl = medias[size].source_url;
-                                    break;
-                                }
-                            }
-                            if (thumbnailUrl) {
-                                $newDiv.find('.entry-img')
-                                    .attr('src', thumbnailUrl)
-                                    .attr('alt', fmData.alt_text);
-                            }
-                        });
-
-                    })($newDiv);
-
-                }
-                $directoryDiv.append($newDiv);
-            }
-        });
-    })
-    </script>
-</head>
-
-<body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        >
+        <title>Landing</title>
+        <!--css font awesome icons-->
+        <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+        <!--bootstrap css-->
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!--main css-->
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
     <div id="header-main">
         <div id="site-logo">
             <a class="page-head__logo"><img src="https://directory.startupberlin.co/wp-content/uploads/2016/10/cropped-tw-logo2.png" alt="Startup Berlin Slack Group"><span class="header-title">Startup Berlin</span></a>
@@ -401,6 +317,17 @@
         ga('create', 'UA-67151997-1', 'auto');
         ga('send', 'pageview');
         </script>
-</body>
-
+        </footer>
+        <!--end footer-section-->
+        <!--set jquery-->
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <!--set bootstrap-->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--set jquery validation-->
+        <script src="./node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+        <!--set jquery charts-->
+        <script src="./node_modules/jquery-circlechart/dist/circleChart.es5.min.js"></script>
+        <!--main.js-->
+        <script src="./assets/js/bundle.js"></script>
+    </body>
 </html>
