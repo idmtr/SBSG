@@ -1,0 +1,17 @@
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# NPM Installed Files #
+#######################
+/node_modules
+
+.sass-cache
