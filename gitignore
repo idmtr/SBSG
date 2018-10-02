@@ -13,7 +13,8 @@
 # NPM Installed Files #
 #######################
 /node_modules
-
 node_modules/*
+/assets
+assets/*
 
 .sass-cache

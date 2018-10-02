@@ -1,0 +1,382 @@
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+      <script>
+    $(function() {
+        // 
+        $.get("https://directory.startupberlin.co/wp-json/wp/v2/resources", function(data) {
+            var LIMIT = 3;
+            var $directoryDiv = $('#directory-entries');
+
+            $directoryDiv.empty();
+
+            for (var i = 0; i < LIMIT; ++i) {
+                var item = data[i];
+                var $newDiv = $('<div class="white-box wb2"><a href="#" class="entry-link"><span class="entry-text"></span><img src="placeholder.gif" class="entry-img"></a></div>');
+
+                // console.log(item);
+
+                $newDiv.find('.entry-link')
+                    .attr('href', item.link);
+                $newDiv.find('.entry-text')
+                    .text(item.title.rendered);
+
+                var featuredMedia = null;
+                try {
+                    featuredMedia = item._links['wp:featuredmedia'][0].href;
+                } catch (e) {}
+
+                if (featuredMedia) {
+
+                    (function($newDiv) {
+
+                        $.get(featuredMedia, function(fmData) {
+                            //console.log(fmData);
+                            var sizes = ['medium', 'thumbnail', 'chipmunk-sm'];
+                            var medias = fmData.media_details.sizes;
+                            var thumbnailUrl;
+
+                            for (var i = 0; i < sizes.length; ++i) {
+                                var size = sizes[i];
+                                if (medias[size] && medias[size].source_url) {
+                                    thumbnailUrl = medias[size].source_url;
+                                    break;
+                                }
+                            }
+                            if (thumbnailUrl) {
+                                $newDiv.find('.entry-img')
+                                    .attr('src', thumbnailUrl)
+                                    .attr('alt', fmData.alt_text);
+                            }
+                        });
+
+                    })($newDiv);
+
+                }
+                $directoryDiv.append($newDiv);
+            }
+        });
+    })
+    </script>
+</head>
+
+<body>
+    <div id="header-main">
+        <div id="site-logo">
+            <a class="page-head__logo"><img src="https://directory.startupberlin.co/wp-content/uploads/2016/10/cropped-tw-logo2.png" alt="Startup Berlin Slack Group"><span class="header-title">Startup Berlin</span></a>
+        </div>
+        <nav id="nav">
+            <div class="menu-main-container">
+                <ul id="menu-main" class="menu">
+                    <!--
+                    <li><a class="menu-item logotype" href="https://www.startupberlin.co">SBG</a></li> -->
+                    <li><a class="menu-item" href="https://startupberlin.slack.com/" target="_blank">Slack</a></li>
+                    <li><a class="menu-item" href="https://directory.startupberlin.co" target="_blank">Directory</a></li>
+                    <li><a class="menu-item" href="https://directory.startupberlin.co/jobs/" target="_blank">Jobs</a></li>
+                    <li><a class="menu-item" href="https://www.facebook.com/pg/StartupBerlinGroup/events/" target="_blank">Events</a></li>
+                    <!--
+                    <li><a class="menu-item" href="https://forum.startupberlin.co">Forum</a></li> -->
+                </ul>
+            </div>
+        </nav>
+        <div class="social-set">
+            
+             <a class="header-social-icons" href="https://www.twitter.com/startupslack/" target="_blank">
+              <img class="info-icon" src="img/twitter.svg" alt="Startup Berlin Twitter">
+            </a>
+            <a class="header-social-icons" href="https://www.facebook.com/StartupBerlinGroup/" target="_blank">
+              <img class="info-icon" src="img/facebook.svg" alt="Startup Berlin Facebook">
+            </a>
+            <a  class="header-social-icons" href="https://www.linkedin.com/groups/4539751" target="_blank">
+              <img class="info-icon" src="img/linkedin.svg" alt="Startup Berlin Linkedin">
+            </a>
+            <a class="header-social-icons" href="https://medium.com/startup-berlin-stories" target="_blank">
+              <img class="info-icon" src="img/medium.svg"alt="Startup Berlin Medium">
+            </a>
+        </div>
+    </div>
+    <div class="centered hero-section">
+        <br>
+        <br>
+        <div class="w-container" data-ix="new-interaction">
+            <h1 class="hero-heading title1 rotate1" data-ix="fade-in-bottom-page-loads"><strong><!--<span class="rotate">-->Startup Berlin <i class="fa fa-slack"></i>Group</strong></h1>
+            <h4 style="color:#000;"><strong>3750+</strong> Members Slack-chat for Berlin startup people.</h4>
+
+            <div class="access-butons" style="margin: 2em;">
+                
+                <a class="btn btn2 btn2space" href="https://sbsg.typeform.com/to/wRdz3t" data-mode="2" target="_blank"><img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/1f4e7.png" alt="Envelope"> Get Your <i class="fa fa-slack"></i>Slack Invite</a>
+            <script>
+            (function() {
+                var qs, js, q, s, d = document,
+                    gi = d.getElementById,
+                    ce = d.createElement,
+                    gt = d.getElementsByTagName,
+                    id = 'typef_orm',
+                    b = 'https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
+                if (!gi.call(d, id)) {
+                    js = ce.call(d, 'script');
+                    js.id = id;
+                    js.src = b + 'share.js';
+                    q = gt.call(d, 'script')[0];
+                    q.parentNode.insertBefore(js, q)
+                }
+                id = id + '_';
+                if (!gi.call(d, id)) {
+                    qs = ce.call(d, 'link');
+                    qs.rel = 'stylesheet';
+                    qs.id = id;
+                    qs.href = b + 'share-button.css';
+                    s = gt.call(d, 'head')[0];
+                    s.appendChild(qs, s)
+                }
+            })()
+            </script>
+            <a class="btn btn2 btn2space" style="margin: 2em;" href="https://startupberlin.slack.com" target="_blank"> <img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/1f510.png" alt="Lock with key"> Log In </a>
+
+            </div>
+
+
+            <div class="videoWrapper">              
+              <iframe width="560" height="auto" src="https://www.youtube.com/embed/JqXXzZURPrA?
+                                                          rel=0&autoplay=1
+                                                          &controls=0
+                                                          &showinfo=1" 
+                                                          frameborder="0" allowfullscreen></iframe>
+            </div>
+            <br>
+            <br>
+            <p class="center section-subheading white" style="color:#fff;">Startup Berlin Group is for all of us who push the entrepreneurial scene in Berlin.
+                <br>Let's connect, chat, share and help each other in our journey to greatness.</p>
+            <br>
+            <div class="chat-links" >
+                <a style="color: #00ff16;" href="./irc.html"> We are also on IRC </a> &nbsp;&&nbsp;
+                <a style="color: #00ff16;" href="https://t.me/joinchat/Cq0gkhHYtHWLR73UDoaQIQ">Telegram</a>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="w-container">
+            <div class="section-title-group">
+                <h2 class="centered section-heading"><img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/1f469-200d-1f4bb.png" alt="emoji"><img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/1f468-200d-1f4bb.png" alt="emoji"> What's Inside?</h2>
+                <div class="center section-subheading">Chat #channels with people like you, makers, doers, coders, designers, founders, investors, journalist, marketers, PR's. <b>Join us!</b></div>
+            </div>
+            <img class="fullwidth-image" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 728px, 940px" src="img/dir.gif" srcset="img/dir.gif 500w, img/dir.gif 800w, img/dir.gif 1080w, img/dir.gif 1350w" alt="Get an Invite">
+            <a class="btn btn2" href="https://directory.startupberlin.co" target="_blank" data-w-tab="Tab 1">
+          <strong>Get an Invite</strong></a>
+        </div>
+        <div class="section section2">
+            <div class="w-container">
+                <div class="section-title-group">
+                    <h2 class="centered section-heading"><img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/1f680.png" alt="Berlin Startup Directory"> Berlin Startup Directory</h2>
+                    <div class="center section-subheading">Browse
+                        <a href="https://directory.startupberlin.co/collection/berlin-startups/">Startups</a>,
+                        <a href="https://directory.startupberlin.co/collection/berlin-startup-investors-list/">Investors</a>,
+                        <a href="https://directory.startupberlin.co/collection/coworking-spaces-berlin/">Coworking Spaces</a> & More
+                    </div>
+                </div>
+                <div class="tabs-wrapper w-tabs" data-duration-in="300" data-duration-out="100">
+                    <div class="tab-menu w-tab-menu">
+                    </div>
+                    <div id="directory-entries">
+                    </div>
+                </div>
+                <br>
+                <a class="btn btn2" href="https://directory.startupberlin.co" target="_blank" data-w-tab="Tab 1">
+          <strong>BROWSE THE DIRECTORY</strong></a>
+                <br>
+                <br>
+                <div class="w-tab-content">
+                    <div class="w--tab-active w-tab-pane" data-w-tab="Tab 1">
+                        <div>
+                            <br>
+                            <br>
+                            <br>
+                            <h2 id="newsletter" class="centered section-heading"> Members <img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/1f4e9.png" alt="emoji bulletin"> Newsletter & Bulletin</h2>
+                            <p>Once a month we send a news bulletin with content submitted by the group members.
+                                <br> Subscribe to get the freshest updates from the Berlin Startup Scene.
+                                <br>Not sure? <img style="height:26px;" src="https://abs.twimg.com/emoji/v2/72x72/27a1.png" alt="Bulletin archive"> Check the <a href="https://medium.com/@startupslack"><b>Previous Issues</b></a>
+                            </p>
+                            <!-- Begin MailChimp Signup Form -->
+                            <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+                            <style type="text/css">
+                            #mc_embed_signup {
+                                background: #fff;
+                                clear: left;
+                                font: 14px Helvetica, Arial, sans-serif;
+                            }
+                            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+
+                            #mc_embed_signup_scroll {
+                                margin-top: -40px;
+                            }
+
+                            #mc-embedded-subscribe {
+                                /*position: relative;
+                                  display: inline-block;
+                                  vertical-align: middle;
+                                  text-align: center;
+                                  padding: 15px 22px;
+                                  line-height: 1em;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  text-transform: uppercase;
+                                  letter-spacing: 0.1em;
+                                  color: #fff;  
+                                  background-color: #3e70ff;
+                                  border: #3e70ff; */
+                                margin-bottom: 20px;
+                            }
+
+                            #mc_embed_signup form {
+                                text-align: center;
+                            }
+
+                            #mc_embed_signup input.email {
+                                display: inline;
+                            }
+
+                            #mc-embedded-subscribe:hover {
+                                background: #1645cc;
+                            }
+                            </style>
+                            <div id="mc_embed_signup">
+                                <form action="//StartupBerlin.us11.list-manage.com/subscribe/post?u=3c8c15241e58164cfb5c05569&amp;id=08900bb2df" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                        <label for="mce-EMAIL">
+                                            <h3 class="newsletetr-title"></h3></label>
+                                        <input type="email" style="width:350px; height:60px; font-size:30px;" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder=" Email address" required>
+                                        <br>
+                                        <br>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                            <input type="text" name="b_3c8c15241e58164cfb5c05569_08900bb2df" tabindex="-1" value="">
+                                        </div>
+                                        <div class="clear">
+                                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn2">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-xl members bg-style0">
+        <div class="container">
+            <div class="row calc-p-bottom">
+                <div class="twelve columns">
+                    <h2 class="h-style3 section-h">Volunteers, Makers & Doers</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="two columns id">
+                    <div><img src="img/pauline.jpg" alt="Pauline"></div>
+                    <br>
+                    <div><a href="https://twitter.com/pauline_rssl">Pauline</a></div>
+                    <p style="color:red;">#community</p>
+                </div>
+                <div class="two columns id">
+                    <div><img src="img/guillaume.jpg" alt="GuillaumeHermet"></div>
+                    <br>
+                    <div><a href="https://twitter.com/GuillaumeHermet">Guillaume</a></div>
+                    <p style="color:red;">#tech</p>
+                </div>
+                <div class="two columns id">
+                    <div><img src="img/dimitar.jpg" alt="Dimitar"></div>
+                    <br>
+                    <div><a href="https://twitter.com/IDMTR">Dimitar</a></div>
+                    <p style="color:red;">#social</p>
+                </div>
+                <div class="two columns id">
+                    <div><img src="img/devon.jpg" alt="Devon"></div>
+                    <br>
+                    <div><a href="https://twitter.com/devon_barrett">Devon</a></div>
+                    <p style="color:red;">#hackathons</p>
+                </div>
+                <div class="two columns id">
+                    <div><img src="img/marie.jpg" alt="Marie"></div>
+                    <br>
+                    <div><a href="">Marie</a></div>
+                    <p style="color:red;">#events</p>
+                </div>
+                <div class="two columns id">
+                    <div><img src="img/tony.jpg" alt="Tony"></div>
+                    <br>
+                    <div><a href="https://twitter.com/tmwooster">Tony</a></div>
+                    <p style="color:red;">#tech</p>
+                </div>
+                <div class="centered">
+                    <div class="button">
+                        <a style="color:#fff;" href="https://directory.startupberlin.co/job/volunteers-welcomed-to-startup-berlin-slack/" target="_blank"> Get involved?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="footer">
+        <div class="w-container">
+            <div class="w-row">
+                <div class="spc w-col w-col-4">
+                    <h5>About</h5>
+                    <p>Startup Berlin Group is a free chat for people interested in the Berlin startup scene.
+                        <br> We curate a monthly members generated bulletin, a startup directory, organize events and generaly have good time while fosterting the startup community in the city.</p>
+                </div>
+                <div class="spc w-col w-col-4">
+                    <h5>links</h5>
+                    <a class="footer-link" href="https://directory.startupberlin.co/">Startup Directory</a>
+                    <a class="footer-link" href="https://startupberlin.co/bulletin.html">Bulletin Submission</a>
+                    <a class="footer-link" href="https://www.facebook.com/pg/StartupBerlinGroup/events/">Events</a><a class="footer-link" href="https://directory.startupberlin.co/about">About</a>
+                    <a class="footer-link" href="https://directory.startupberlin.co/code-of-conduct/"> Code of Conduct</a>
+                </div>
+                <div class="w-col w-col-4">
+                    <h5>We Are Social</h5>
+                    <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="img/twitter.svg" style="width:30px;" alt="Twitter"><a class="footer-link with-icon" href="https://twitter.com/StartupSlack">Twitter</a>
+                    </div>
+                    <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="img/facebook.svg" style="width:30px;" alt="Facebook"><a class="footer-link with-icon" href="https://www.facebook.com/StartupBerlinGroup/">Facebook</a>
+                    </div>
+                    <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="img/linkedin.svg" style="width:30px;" alt="Linkedin"><a class="footer-link with-icon" href="https://www.linkedin.com/groups/4539751">Linkedin</a>
+                    </div>
+                    <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="img/medium.svg" style="width:30px;" alt="Medium"><a class="footer-link with-icon" href="https://medium.com/startup-berlin-stories">Medium</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center footer">
+            <div class="w-container">
+                <div class="footer-text">Copyleft 2018</div>
+            </div>
+        </div>
+      </div>
+        <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-67151997-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+        </footer>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>">
+    </script>
+</body>
+
+</html>
